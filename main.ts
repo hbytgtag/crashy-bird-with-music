@@ -7,6 +7,9 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     bird.change(LedSpriteProperty.Y, 1)
 })
+input.onGesture(Gesture.Shake, function () {
+    music.stopMelody(MelodyStopOptions.All)
+})
 let emptyObstacleY = 0
 let ticks = 0
 let bird: game.LedSprite = null
@@ -35,5 +38,5 @@ basic.forever(function () {
         }
     }
     ticks += 1
-    basic.pause(1000)
+    basic.pause(500)
 })
